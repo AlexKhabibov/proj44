@@ -1,6 +1,6 @@
-import type { Product } from "./types";
+import type { IProduct } from "./types";
 
-export const products: Product[] = [
+export const products: IProduct[] = [
     {
         id: 1,
         name: "Кроссовки Nike",
@@ -37,3 +37,5 @@ export const products: Product[] = [
         image: "/assets/underarmour.png"
     }
 ];
+
+

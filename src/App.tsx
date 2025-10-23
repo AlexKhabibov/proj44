@@ -1,15 +1,15 @@
 import Content from './components/Content'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Profile from './components/Profile'
+// import Profile from './components/Profile'
 import Search from './components/Search'
 
 function App() {
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div>
       <Header />
-      <Profile />
+      {/* <Profile /> */}
       <Search />
       <Content />
       <Footer />
