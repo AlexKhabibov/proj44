@@ -1,8 +1,12 @@
 function Footer() {
     return (
-        <div>
-            Footer
-        </div>
+        <ul>
+            <li>Проекты</li>
+            <li>Отзывы</li>
+            <li>Инорфмация</li>
+            <li>Рекламодатели</li>
+            <li>Документация</li>
+        </ul>
     );
 }
 

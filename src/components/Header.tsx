@@ -13,7 +13,7 @@ function Header() {
                 color: "white",
             }}
         >
-            <nav style={{ display: "flex", gap: "15px" }}>
+            {/* <nav style={{ display: "flex", gap: "15px" }}>
                 <Link to="/" style={{ color: "white", textDecoration: "none" }}>
                     Главная
                 </Link>
@@ -29,7 +29,7 @@ function Header() {
                 <Link to="/cart" style={{ color: "white", textDecoration: "none" }}>
                     Контакты
                 </Link>
-            </nav>
+            </nav> */}
         </header>
     );
 }
