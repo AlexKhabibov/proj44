@@ -1,7 +1,7 @@
 function CardDetails() {
     return (
         <>
-
+            cardDetails
         </>
     );
 }

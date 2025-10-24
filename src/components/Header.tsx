@@ -6,30 +6,18 @@ function Header() {
         <header
             style={{
                 display: "flex",
-                justifyContent: "space-between",
+                gap: '50px',
                 alignItems: "center",
                 padding: "10px 20px",
                 background: "#282c34",
                 color: "white",
             }}
         >
-            {/* <nav style={{ display: "flex", gap: "15px" }}>
-                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-                    Главная
-                </Link>
-                <Link to="/favorites" style={{ color: "white", textDecoration: "none" }}>
-                    Избранное
-                </Link>
-                <Link to="/cart" style={{ color: "white", textDecoration: "none" }}>
-                    Корзина
-                </Link>
-                <Link to="/cart" style={{ color: "white", textDecoration: "none" }}>
-                    О нас
-                </Link>
-                <Link to="/cart" style={{ color: "white", textDecoration: "none" }}>
-                    Контакты
-                </Link>
-            </nav> */}
+            <Link to='/'>Главная</Link>
+            <Link to='/catalog'>Каталог</Link>
+            <Link to='/dashboard'>Кабинет</Link>
+            <Link to='/cart'>Корзина</Link>
+            <Link to='/contacts'>Контакты</Link>
         </header>
     );
 }

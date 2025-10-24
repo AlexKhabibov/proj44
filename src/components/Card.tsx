@@ -1,7 +1,7 @@
 function Card() {
     return (
         <>
-
+            card
         </>
     );
 }
