@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.pinimg.com/originals/71/9b/1e/719b1eabeffc617b788639f4e564bbbb.jpg",
+    "name": "T-shirt",
+    "description": "Longsleeve cotton 100%",
+    "price": 25
+  },
+  {
+    "id": 2,
+    "image": "https://i.pinimg.com/originals/71/9b/1e/719b1eabeffc617b788639f4e564bbbb.jpg",
+    "name": "Sweater",
+    "description": "Shortsleeve cotton 100%",
+    "price": 30
+  },
+  {
+    "id": 3,
+    "image": "https://i.pinimg.com/originals/71/9b/1e/719b1eabeffc617b788639f4e564bbbb.jpg",
+    "name": "Jeans",
+    "description": "cotton 100%",
+    "price": 45
+  },
+  {
+    "id": 4,
+    "image": "https://i.pinimg.com/originals/71/9b/1e/719b1eabeffc617b788639f4e564bbbb.jpg",
+    "name": "Jacket",
+    "description": "polyester 100%",
+    "price": 60
+  },
+  {
+    "id": 5,
+    "image": "https://i.pinimg.com/originals/71/9b/1e/719b1eabeffc617b788639f4e564bbbb.jpg",
+    "name": "Pants",
+    "description": "Blue cotton 100%",
+    "price": 40
+  }
+]
