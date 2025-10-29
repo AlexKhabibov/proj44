@@ -1,4 +1,4 @@
-import CardDetails from "../components/CardDetails";
+import CardDetails from "../components/ProductCardDetails";
 
 function ProductDetailsPage() {
     return (

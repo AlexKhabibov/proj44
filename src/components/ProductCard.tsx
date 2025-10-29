@@ -1,6 +1,6 @@
 import type { IProduct } from "../data/types";
 
-function Card({ name, description, price, image }: IProduct) {
+function ProductCard({ name, description, price, image }: IProduct) {
 
     const handleRedirect = () => {
 
@@ -28,4 +28,4 @@ function Card({ name, description, price, image }: IProduct) {
     );
 }
 
-export default Card;
+export default ProductCard;

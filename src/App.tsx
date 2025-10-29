@@ -1,21 +1,14 @@
-import { BrowserRouter } from 'react-router'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Search from './components/Search'
-import UserDashboard from './components/UserDashboard'
-import CardList from './components/CardList'
+import { RouterProvider } from 'react-router'
+import AuthProvider from './context/AuthContext'
+import { router } from './routes/router'
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Search />
-        <UserDashboard />
-        <CardList />
-        <Footer />
-      </BrowserRouter>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </>
   )
 }

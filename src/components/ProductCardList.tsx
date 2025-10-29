@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import type { IProduct } from "../data/types";
-import Card from "./Card";
+import Card from "./ProductCard";
 
-function CardList() {
+function ProductCardList() {
 
     const [products, setProducts] = useState<IProduct[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -63,4 +63,4 @@ function CardList() {
     );
 }
 
-export default CardList;
+export default ProductCardList;

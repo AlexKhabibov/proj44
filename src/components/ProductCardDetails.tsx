@@ -1,4 +1,4 @@
-function CardDetails() {
+function ProductCardDetails() {
     return (
         <>
             cardDetails
@@ -6,4 +6,4 @@ function CardDetails() {
     );
 }
 
-export default CardDetails;
+export default ProductCardDetails;
