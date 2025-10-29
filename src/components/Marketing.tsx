@@ -1,6 +1,6 @@
 function Marketing() {
     return (
-        <></>
+        <>Marketing</>
     );
 }
 

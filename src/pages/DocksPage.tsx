@@ -1,11 +1,11 @@
-import Docks from "../components/Docks";
+import Docs from "../components/Docs";
 
-function DocksPage() {
+function DocsPage() {
     return (
         <>
-            <Docks />
+            <Docs />
         </>
     );
 }
 
-export default DocksPage;
+export default DocsPage;

@@ -2,9 +2,7 @@ import type { IProduct } from "../data/types";
 
 function ProductCard({ name, description, price, image }: IProduct) {
 
-    const handleRedirect = () => {
-
-    }
+    const handleRedirect = () => {}
 
     return (
         <div

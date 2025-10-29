@@ -1,6 +1,6 @@
 function Information() {
     return ( 
-        <></>
+        <>Information</>
      );
 }
 

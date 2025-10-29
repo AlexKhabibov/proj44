@@ -8,8 +8,11 @@ import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import MarketingPage from "../pages/MarketingPage";
 import InformationPage from "../pages/InformationPage";
-import DocksPage from "../pages/DocksPage";
 import FeedbacksPage from "../pages/FeedbackPage";
+import CatalogPage from "../pages/CatalogPage";
+import UserDashboardPage from "../pages/UserDashboardPage";
+import ContactsPage from "../pages/ContactsPage";
+import DocsPage from "../pages/DocksPage";
 
 export const router = createBrowserRouter([
     {
@@ -19,12 +22,15 @@ export const router = createBrowserRouter([
             { index: true, element: <MainPage /> },
             { path: "favorites", element: <FavoritesPage /> },
             { path: "cart", element: <CartPage /> },
+            { path: "catalog", element: <CatalogPage /> },
+            { path: "contacts", element: <ContactsPage /> },
+            { path: "dashboard", element: <UserDashboardPage /> },
             { path: "product/:id", element: <ProductDetailsPage /> },
             { path: "projects", element: <ProjectsPage /> },
             { path: "feedbacks", element: <FeedbacksPage /> },
             { path: "marketing", element: <MarketingPage /> },
             { path: "information", element: <InformationPage /> },
-            { path: "docks", element: <DocksPage /> },
+            { path: "docs", element: <DocsPage /> },
         ],
     },
 ]);

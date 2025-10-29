@@ -7,8 +7,5 @@ function FeedbacksPage() {
         </>
     );
 }
-<>
-    <Feedbacks />
-</>
 
 export default FeedbacksPage;

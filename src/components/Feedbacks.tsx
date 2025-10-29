@@ -1,6 +1,6 @@
 function Feedbacks() {
     return ( 
-        <></>
+        <>Feedbacks</>
      );
 }
 
