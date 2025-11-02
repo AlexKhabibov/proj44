@@ -1,6 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-
 import MainPage from "../pages/MainPage";
 import FavoritesPage from "../pages/FavoritesPage";
 import CartPage from "../pages/CartPage";
@@ -13,6 +11,7 @@ import CatalogPage from "../pages/CatalogPage";
 import UserDashboardPage from "../pages/UserDashboardPage";
 import ContactsPage from "../pages/ContactsPage";
 import DocsPage from "../pages/DocksPage";
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
     {

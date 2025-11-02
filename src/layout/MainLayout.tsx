@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UserDashboard from "../components/UserDashboard";
@@ -12,11 +12,7 @@ function MainLayout() {
                 <SearchBar />
                 <UserDashboard />
             </div>
-
-            {/* Сюда отправляем все отальное */}
             <Outlet />
-            {/* Сюда отправляем все отальное */}
-            
             <Footer />
         </div>
     );
