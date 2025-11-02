@@ -6,8 +6,7 @@ function Header() {
         <header
             style={{
                 display: "flex",
-                gap: '50px',
-                alignItems: "center",
+                justifyContent: 'space-around',
                 padding: "10px 20px",
                 background: "#282c34",
                 color: "white",

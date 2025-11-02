@@ -1,5 +1,3 @@
-// src/data/types.ts
-
 // Товар
 export interface IProduct {
     id: number;           // уникальный идентификатор товара

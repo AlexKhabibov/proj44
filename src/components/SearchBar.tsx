@@ -1,6 +1,6 @@
 function SearchBar() {
     return (
-        <div>
+        <div style={{marginTop: '20px'}}>
             <input type="text" placeholder="find the product" />
         </div>
     );

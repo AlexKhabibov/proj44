@@ -1,6 +1,6 @@
 import UserProfile from "../components/UserProfile";
 
-function UserDashboardPage() {
+function UserProfilePage() {
     return (
         <>
             <UserProfile />
@@ -8,4 +8,4 @@ function UserDashboardPage() {
     );
 }
 
-export default UserDashboardPage;
+export default UserProfilePage;

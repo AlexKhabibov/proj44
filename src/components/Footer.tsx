@@ -6,11 +6,11 @@ function Footer() {
         <footer
             style={{
                 display: "flex",
-                gap: '50px',
-                alignItems: "center",
+                justifyContent: 'space-around',
                 padding: "10px 20px",
                 background: "#282c34",
-                color: "white",
+                fontSize: '12px',
+                textDecoration: 'none',
             }}
         >
             <Link to='/projects'>Проекты</Link>

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import UserDashboard from "../components/UserDashboard";
 import SearchBar from "../components/SearchBar";
+import UserDashboardBar from "../components/UserDashboardBar";
 
 function MainLayout() {
     return (
@@ -10,7 +10,7 @@ function MainLayout() {
             <Header />
             <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
                 <SearchBar />
-                <UserDashboard />
+                <UserDashboardBar />
             </div>
             <Outlet />
             <Footer />
