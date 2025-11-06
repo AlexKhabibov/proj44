@@ -1,8 +1,8 @@
 function ProductCardDetails() {
     return (
-        <>
+        <div>
             ProductCardDetails
-        </>
+        </div>
     );
 }
 

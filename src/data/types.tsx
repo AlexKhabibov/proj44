@@ -1,13 +1,16 @@
-// Товар
 export interface IProduct {
-    id: number;           // уникальный идентификатор товара
-    name: string;         // название товара
-    price: number;        // цена
-    description: string;  // описание товара
-    image: string;        // ссылка на изображение
-}
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    image: string;
+    rating: {
+        rate: number;
+        count: number;
+    };
+};
 
-// Пользователь
 export interface IUser {
     id: number;           // уникальный идентификатор
     name: string;         // имя пользователя
@@ -43,10 +46,6 @@ export interface AuthState {
     removeFromFavorites: (id: number) => void;
 }
 
-export interface ProductCardProps {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    image: string;
+export interface ProductCardProps extends Partial<IProduct> {
+    product: IProduct;
 }

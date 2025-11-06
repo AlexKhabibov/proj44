@@ -2,7 +2,9 @@ import type { ProductCardProps } from "../data/types";
 import { useAuthStore } from "../store/useAuthStore";
 import { FaHeart, FaRegHeart, FaShoppingCart, FaCartPlus } from "react-icons/fa";
 
-function ProductCard({ id, name, description, price, image }: ProductCardProps) {
+function ProductCard({ product }: ProductCardProps) {
+    const { id, title, description, price, image } = product;
+
     const addToFavorites = useAuthStore((state) => state.addToFavorites);
     const removeFromFavorites = useAuthStore((state) => state.removeFromFavorites);
     const addToCart = useAuthStore((state) => state.addToCart);
@@ -15,12 +17,12 @@ function ProductCard({ id, name, description, price, image }: ProductCardProps) 
 
     const handleFavoriteClick = () => {
         if (isFavorite) removeFromFavorites(id);
-        else addToFavorites({ id, name, description, price, image });
+        else addToFavorites(product);
     };
 
     const handleCartClick = () => {
         if (isInCart) removeFromCart(id);
-        else addToCart({ id, name, description, price, image });
+        else addToCart(product);
     };
 
     return (
@@ -31,10 +33,10 @@ function ProductCard({ id, name, description, price, image }: ProductCardProps) 
             <div style={{ cursor: "pointer" }}>
                 <img
                     src={image}
-                    alt={name}
+                    alt={title}
                     style={{ width: "100%", height: 150, objectFit: "contain", borderRadius: 4 }}
                 />
-                <h3>{name}</h3>
+                <h3>{title}</h3>
                 <p style={{ minHeight: 40 }}>{description}</p>
                 <p>{price} ₽</p>
             </div>

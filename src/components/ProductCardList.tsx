@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import type { IProduct } from "../data/types";
 import ProductCard from "./ProductCard";
+import { loadProducts } from "../api/dataApi";
 
 function ProductCardList() {
     const [products, setProducts] = useState<IProduct[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
@@ -15,10 +16,7 @@ function ProductCardList() {
                 setLoading(true);
                 setError(null);
 
-                const res = await fetch("/data.json");
-                if (!res.ok) throw new Error(`Ошибка загрузки (${res.status})`);
-
-                const data = (await res.json()) as IProduct[];
+                const data = await loadProducts(); // ✅ вызываем функцию из dataApi
                 if (!cancelled) setProducts(data);
             } catch (err) {
                 if (!cancelled) {
@@ -33,17 +31,26 @@ function ProductCardList() {
         return () => { cancelled = true; };
     }, []);
 
-    if (loading) return <div style={{ padding: 20 }}>Загрузка товаров...</div>;
-    if (error) return <div style={{ padding: 20, color: "red" }}>Ошибка: {error}</div>;
+    if (loading || error)
+        return (
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: 'center',
+                    width: '1200px',
+                }}
+            >
+                <h3 style={{ padding: 20, color: error ? "red" : "inherit" }}>
+                    {loading ? "Загрузка товаров..." : `Ошибка: ${error}`}
+                </h3>
+            </div>
+        );
 
     return (
-        <div style={{ display: "flex", gap: 20, padding: 20, flexWrap: "wrap" }}>
-            {products.map(product => (
-                <ProductCard key={product.id}
-                    name={product.name}
-                    description={product.description}
-                    price={product.price}
-                    image={product.image} id={product.id} />
+        <div style={{ display: "flex", gap: 20, padding: 20, flexWrap: "wrap", justifyContent: 'center' }}>
+            {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
             ))}
         </div>
     );
