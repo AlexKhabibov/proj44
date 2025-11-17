@@ -7,29 +7,82 @@ export const useAuthStore = create<AuthState>()(
         (set, get) => ({
             user: null,
             isAuth: false,
-            cart: [],
-            favorites: [],
+            usersData: {},
 
-            login: (user: IUser) => set({ user, isAuth: true }),
-            logout: () => set({ user: null, isAuth: false, cart: [], favorites: [] }),
+            login: (user: IUser) => {
+                const { usersData } = get();
+                const userData = usersData[user.email] || { cart: [], favorites: [] };
+                set({
+                    user,
+                    isAuth: true,
+                    usersData: {
+                        ...usersData,
+                        [user.email]: userData
+                    }
+                });
+            },
+
+            logout: () => set({ user: null, isAuth: false }),
 
             addToCart: (product: IProduct) => {
-                const cart = get().cart;
-                if (!cart.find(p => p.id === product.id)) {
-                    set({ cart: [...cart, product] });
+                const { user, usersData } = get();
+                if (!user) return;
+
+                const userData = usersData[user.email] || { cart: [], favorites: [] };
+                if (!userData.cart.find(p => p.id === product.id)) {
+                    const newCart = [...userData.cart, product];
+                    set({
+                        usersData: {
+                            ...usersData,
+                            [user.email]: { ...userData, cart: newCart }
+                        }
+                    });
                 }
             },
-            removeFromCart: (id: number) =>
-                set({ cart: get().cart.filter(p => p.id !== id) }),
+
+            removeFromCart: (id: number) => {
+                const { user, usersData } = get();
+                if (!user) return;
+
+                const userData = usersData[user.email] || { cart: [], favorites: [] };
+                const newCart = userData.cart.filter(p => p.id !== id);
+                set({
+                    usersData: {
+                        ...usersData,
+                        [user.email]: { ...userData, cart: newCart }
+                    }
+                });
+            },
 
             addToFavorites: (product: IProduct) => {
-                const fav = get().favorites;
-                if (!fav.find(p => p.id === product.id)) {
-                    set({ favorites: [...fav, product] });
+                const { user, usersData } = get();
+                if (!user) return;
+
+                const userData = usersData[user.email] || { cart: [], favorites: [] };
+                if (!userData.favorites.find(p => p.id === product.id)) {
+                    const newFav = [...userData.favorites, product];
+                    set({
+                        usersData: {
+                            ...usersData,
+                            [user.email]: { ...userData, favorites: newFav }
+                        }
+                    });
                 }
             },
-            removeFromFavorites: (id: number) =>
-                set({ favorites: get().favorites.filter(p => p.id !== id) }),
+
+            removeFromFavorites: (id: number) => {
+                const { user, usersData } = get();
+                if (!user) return;
+
+                const userData = usersData[user.email] || { cart: [], favorites: [] };
+                const newFav = userData.favorites.filter(p => p.id !== id);
+                set({
+                    usersData: {
+                        ...usersData,
+                        [user.email]: { ...userData, favorites: newFav }
+                    }
+                });
+            }
         }),
         { name: "auth-storage" }
     )

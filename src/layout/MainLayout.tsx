@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
-import UserDashboardBar from "../components/UserDashboardBar";
+import UserDashboardBarUI from "../components/UserDashboardBar/UserDashboardBarUI";
 
 function MainLayout() {
     return (
@@ -10,7 +10,7 @@ function MainLayout() {
             <Header />
             <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
                 <SearchBar />
-                <UserDashboardBar />
+                <UserDashboardBarUI />
             </div>
             <Outlet />
             <Footer />

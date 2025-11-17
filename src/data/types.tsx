@@ -12,13 +12,12 @@ export interface IProduct {
 };
 
 export interface IUser {
-    id: number;           // уникальный идентификатор
-    name: string;         // имя пользователя
-    email: string;        // email, используется для логина
-    token?: string;       // необязательный токен или пароль (можно хранить хэш)
+    id: number;
+    name: string;
+    email: string;
+    token?: string;
 }
 
-// Интерфейс контекста авторизации (если нужен)
 export interface IAuthContext {
     user: IUser | null;
     login: (user: IUser) => void;
@@ -27,17 +26,19 @@ export interface IAuthContext {
     toggleCart: (productId: number) => void;
 }
 
-// Пропсы для компонента карточки
 export interface CardInfoProps {
     product: IProduct;
 }
 
-// Состояние стора авторизации (Zustand)
+interface UserData {
+    cart: IProduct[];
+    favorites: IProduct[];
+}
+
 export interface AuthState {
     user: IUser | null;
     isAuth: boolean;
-    cart: IProduct[];
-    favorites: IProduct[];
+    usersData: Record<string, UserData>;
     login: (user: IUser) => void;
     logout: () => void;
     addToCart: (product: IProduct) => void;
@@ -49,3 +50,17 @@ export interface AuthState {
 export interface ProductCardProps extends Partial<IProduct> {
     product: IProduct;
 }
+
+export type UserDashboardBarUIProps = {
+    email: string;
+    password: string;
+    setEmail: (email: string) => void;
+    setPassword: (password: string) => void;
+    isAuth: boolean;
+    user: { id: number; name: string; email: string } | null;
+    cart: IProduct[];
+    favorites: IProduct[];
+    onLogin: (e: React.FormEvent<HTMLFormElement>) => void;
+    onRegister: () => void;
+    onLogout: () => void;
+};

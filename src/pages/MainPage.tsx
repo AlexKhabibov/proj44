@@ -1,9 +1,9 @@
-import ProductCardList from "../components/ProductCardList";
+import ProductCardListUI from "../components/ProductCardList/ProductCardListUI";
 
 function MainPage() {
     return (
         <>
-            <ProductCardList />
+            <ProductCardListUI />
         </>
     );
 }

@@ -1,29 +1,17 @@
-import type { ProductCardProps } from "../data/types";
-import { useAuthStore } from "../store/useAuthStore";
+import type { ProductCardProps } from "../../data/types";
 import { FaHeart, FaRegHeart, FaShoppingCart, FaCartPlus } from "react-icons/fa";
+import ProductCardLogic from "./ProductCardLogic";
 
-function ProductCard({ product }: ProductCardProps) {
-    const { id, title, description, price, image } = product;
+function ProductCardUI({ product }: ProductCardProps) {
 
-    const addToFavorites = useAuthStore((state) => state.addToFavorites);
-    const removeFromFavorites = useAuthStore((state) => state.removeFromFavorites);
-    const addToCart = useAuthStore((state) => state.addToCart);
-    const removeFromCart = useAuthStore((state) => state.removeFromCart);
-    const favorites = useAuthStore((state) => state.favorites);
-    const cart = useAuthStore((state) => state.cart);
+    const {
+        isFavorite,
+        isInCart,
+        handleFavoriteClick,
+        handleCartClick,
+    } = ProductCardLogic(product);
 
-    const isFavorite = favorites.some((p) => p.id === id);
-    const isInCart = cart.some((p) => p.id === id);
-
-    const handleFavoriteClick = () => {
-        if (isFavorite) removeFromFavorites(id);
-        else addToFavorites(product);
-    };
-
-    const handleCartClick = () => {
-        if (isInCart) removeFromCart(id);
-        else addToCart(product);
-    };
+    const { title, description, price, image } = product;
 
     return (
         <div
@@ -60,4 +48,4 @@ function ProductCard({ product }: ProductCardProps) {
     );
 }
 
-export default ProductCard;
+export default ProductCardUI;
