@@ -1,9 +1,9 @@
 import type { ProductCardProps } from "../../data/types";
 import { FaHeart, FaRegHeart, FaShoppingCart, FaCartPlus } from "react-icons/fa";
 import ProductCardLogic from "./ProductCardLogic";
+import styles from "./ProductCardUI.module.css";
 
 function ProductCardUI({ product }: ProductCardProps) {
-
     const {
         isFavorite,
         isInCart,
@@ -14,32 +14,29 @@ function ProductCardUI({ product }: ProductCardProps) {
     const { title, description, price, image } = product;
 
     return (
-        <div
-            className="card"
-            style={{ width: 220, padding: 10, border: "1px solid #ccc", borderRadius: 8 }}
-        >
-            <div style={{ cursor: "pointer" }}>
+        <div className={styles.card}>
+            <div className={styles.content}>
                 <img
                     src={image}
                     alt={title}
-                    style={{ width: "100%", height: 150, objectFit: "contain", borderRadius: 4 }}
+                    className={styles.image}
                 />
-                <h3>{title}</h3>
-                <p style={{ minHeight: 40 }}>{description}</p>
-                <p>{price} ₽</p>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.description}>{description}</p>
+                <p className={styles.price}>{price} ₽</p>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 10 }}>
+            <div className={styles.actions}>
                 <button
                     onClick={handleFavoriteClick}
-                    style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}
+                    className={styles.iconButton}
                 >
                     {isFavorite ? <FaHeart color="red" /> : <FaRegHeart color="gray" />}
                 </button>
 
                 <button
                     onClick={handleCartClick}
-                    style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}
+                    className={styles.iconButton}
                 >
                     {isInCart ? <FaShoppingCart color="#f39c12" /> : <FaCartPlus color="gray" />}
                 </button>
