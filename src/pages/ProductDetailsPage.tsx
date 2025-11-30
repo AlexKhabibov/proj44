@@ -1,9 +1,10 @@
-import CardDetails from "../components/ProductCardDetails";
+import ProductCardDetails from "../components/ProductCardDetails/ProductCardDetailsUI";
+import type { ProductCardProps } from "../data/types";
 
-function ProductDetailsPage() {
+function ProductDetailsPage({ product }: ProductCardProps) {
     return (
         <>
-            <CardDetails />
+            <ProductCardDetails key={product.id} product={product}/>
         </>
     );
 }
