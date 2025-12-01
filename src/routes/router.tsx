@@ -2,7 +2,7 @@ import MainLayout from "../layout/MainLayout";
 import MainPage from "../pages/MainPage";
 import FavoritesPage from "../pages/FavoritesPage";
 import CartPage from "../pages/CartPage";
-import ProductDetailsPage from "../pages/ProductDetailsPage";
+// import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import MarketingPage from "../pages/MarketingPage";
 import InformationPage from "../pages/InformationPage";
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
             { path: "catalog", element: <CatalogPage /> },
             { path: "contacts", element: <ContactsPage /> },
             { path: "dashboard", element: < UserProfilePage /> },
-            { path: "product/:id", element: <ProductDetailsPage /> },
+            // { path: "product/:id", element: <ProductDetailsPage /> },
             { path: "projects", element: <ProjectsPage /> },
             { path: "feedbacks", element: <FeedbacksPage /> },
             { path: "marketing", element: <MarketingPage /> },

@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import UserDashboardBarLogic from "./UserDashboardBarLogic";
 
 export default function UserDashboardBarUI() {
+
+    const navigate = useNavigate();
 
     const {
         email,
@@ -20,8 +23,21 @@ export default function UserDashboardBarUI() {
         return (
             <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
                 <p>Пользователь: {user.name}</p>
-                <p>Избранное: {favorites.length}</p>
-                <p>Корзина: {cart.length}</p>
+
+                <p
+                    style={{ cursor: "pointer", textDecoration: "underline" }}
+                    onClick={() => navigate("/favorites")}
+                >
+                    Избранное: {favorites.length}
+                </p>
+
+                <p
+                    style={{ cursor: "pointer", textDecoration: "underline" }}
+                    onClick={() => navigate("/cart")}
+                >
+                    Корзина: {cart.length}
+                </p>
+
                 <button onClick={handleLogout}>Выйти</button>
             </div>
         );

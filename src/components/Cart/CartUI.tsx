@@ -1,10 +1,10 @@
-import { useAuthStore } from "../store/useAuthStore";
-import ProductCard from "../components/ProductCard/ProductCardUI";
+import { useAuthStore } from "../../store/useAuthStore";
+import ProductCard from "../ProductCard/ProductCardUI";
 
 function Cart() {
+
     const { user, usersData } = useAuthStore();
     const cart = user ? usersData[user.email]?.cart || [] : [];
-
     return (
         <div>
             <h2>Корзина</h2>

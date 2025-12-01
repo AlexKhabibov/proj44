@@ -1,10 +1,10 @@
-import UserProfile from "../components/UserProfile";
+import UserProfileUI from "../components/UserProfile/UserProfileUI";
 
 function UserProfilePage() {
     return (
-        <>
-            <UserProfile />
-        </>
+        <div style={{display: 'flex', justifyContent: 'center', width: '1400px'}}>
+            <UserProfileUI />
+        </div>
     );
 }
 
