@@ -15,6 +15,7 @@ function Header() {
             <Link to='/'>Главная</Link>
             <Link to='/catalog'>Каталог</Link>
             <Link to='/dashboard'>Кабинет</Link>
+            <Link to='/favorites'>Избранное</Link>
             <Link to='/cart'>Корзина</Link>
             <Link to='/contacts'>Контакты</Link>
         </header>

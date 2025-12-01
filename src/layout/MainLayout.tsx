@@ -3,16 +3,22 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import UserDashboardBarUI from "../components/UserDashboardBar/UserDashboardBarUI";
+import styles from "./MainLayout.module.css";
 
 function MainLayout() {
     return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className={styles.layout}>
             <Header />
-            <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+            <div className={styles.topBar}>
                 <SearchBar />
                 <UserDashboardBarUI />
             </div>
-            <Outlet />
+
+            {/* Универсальный контейнер для всех страниц */}
+            <div className={styles.contentWrapper}>
+                <Outlet />
+            </div>
+
             <Footer />
         </div>
     );

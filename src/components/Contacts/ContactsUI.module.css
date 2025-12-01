@@ -1,0 +1,79 @@
+.contactsPage {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contactInfo {
+    background-color: grey;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contactInfo h2 {
+    margin-bottom: 10px;
+}
+
+.contactFormSection {
+    margin-bottom: 30px;
+}
+
+.contactFormSection h2 {
+    margin-bottom: 10px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactForm label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.contactForm input,
+.contactForm textarea {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.contactForm button {
+    width: 150px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0077ff;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.contactForm button:hover {
+    background-color: #005fcc;
+}
+
+.contactMap h2 {
+    margin-bottom: 10px;
+}
+
+.mapContainer {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
