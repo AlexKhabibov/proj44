@@ -1,0 +1,42 @@
+/* Основной контейнер корзины */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto; /* центрирование блока по горизонтали */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Заголовок корзины */
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: inherit; /* наследуем глобальный цвет */
+}
+
+/* Сетка товаров в корзине */
+.productsGrid {
+    display: flex;
+    gap: 20px;
+}
+
+/* Каждая карточка занимает всю ширину grid-ячейки */
+.productsGrid > * {
+
+    box-sizing: border-box;
+}
+
+/* Сообщение о пустой корзине */
+.emptyMessage {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .productsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

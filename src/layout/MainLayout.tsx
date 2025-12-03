@@ -14,7 +14,6 @@ function MainLayout() {
                 <UserDashboardBarUI />
             </div>
 
-            {/* Универсальный контейнер для всех страниц */}
             <div className={styles.contentWrapper}>
                 <Outlet />
             </div>

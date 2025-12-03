@@ -9,9 +9,9 @@ import InformationPage from "../pages/InformationPage";
 import FeedbacksPage from "../pages/FeedbackPage";
 import CatalogPage from "../pages/CatalogPage";
 import ContactsPage from "../pages/ContactsPage";
-import DocsPage from "../pages/DocksPage";
 import { createBrowserRouter } from "react-router-dom";
 import UserProfilePage from "../pages/UserProfilePage";
+import Documents from "../components/Documents";
 
 export const router = createBrowserRouter([
     {
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
             { path: "feedbacks", element: <FeedbacksPage /> },
             { path: "marketing", element: <MarketingPage /> },
             { path: "information", element: <InformationPage /> },
-            { path: "docs", element: <DocsPage /> },
+            { path: "docs", element: <Documents /> },
         ],
     },
 ]);

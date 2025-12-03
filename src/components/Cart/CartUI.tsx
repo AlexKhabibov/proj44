@@ -1,20 +1,29 @@
-import { useAuthStore } from "../../store/useAuthStore";
-import ProductCard from "../ProductCard/ProductCardUI";
+import ProductCardUI from "../ProductCard/ProductCardUI";
+import CartLogic from "./CartLogic";
+import styles from "./CartUI.module.css";
 
-function Cart() {
+function CartUI() {
+    const { cart } = CartLogic();
 
-    const { user, usersData } = useAuthStore();
-    const cart = user ? usersData[user.email]?.cart || [] : [];
+    if (!cart || cart.length === 0) {
+        return (
+            <div className={styles.container}>
+                <h2 className={styles.title}>Корзина</h2>
+                <p className={styles.emptyMessage}>Ваша корзина пуста</p>
+            </div>
+        );
+    }
+
     return (
-        <div>
-            <h2>Корзина</h2>
-            <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-                {cart.map(product => (
-                    <ProductCard key={product.id} product={product} />
+        <div className={styles.container}>
+            <h2 className={styles.title}>Корзина</h2>
+            <div className={styles.productsGrid}>
+                {cart.map((product) => (
+                    <ProductCardUI key={product.id} product={product} />
                 ))}
             </div>
         </div>
     );
 }
 
-export default Cart;
+export default CartUI;

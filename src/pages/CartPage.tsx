@@ -1,9 +1,9 @@
-import Cart from "../components/Cart";
+import CartUI from "../components/Cart/CartUI";
 
 function CartPage() {
     return (
         <div style={{display: 'flex', justifyContent: 'center', width: '1400px'}}>
-            <Cart />
+            <CartUI />
         </div>
     );
 }
