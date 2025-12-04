@@ -6,16 +6,13 @@ const ContactsUI: React.FC = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // здесь можно обработать отправку формы
         alert("Форма отправлена!");
     };
 
     return (
         <div className={styles.contactsPage}>
-            {/* Заголовок страницы */}
             <h1 className={styles.title}>Контакты</h1>
 
-            {/* Информация о магазине */}
             <section className={styles.contactInfo}>
                 <h2>Наши данные</h2>
                 <p><strong>Адрес:</strong> г. Москва, ул. Примерная, 10</p>
@@ -24,7 +21,6 @@ const ContactsUI: React.FC = () => {
                 <p><strong>Время работы:</strong> Пн–Пт 9:00–18:00</p>
             </section>
 
-            {/* Форма обратной связи */}
             <section className={styles.contactFormSection}>
                 <h2>Напишите нам</h2>
                 <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -44,7 +40,6 @@ const ContactsUI: React.FC = () => {
                 </form>
             </section>
 
-            {/* Карта */}
             <section className={styles.contactMap}>
                 <h2>Где мы находимся</h2>
                 <div className={styles.mapContainer}>

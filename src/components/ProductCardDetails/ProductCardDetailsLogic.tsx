@@ -1,4 +1,3 @@
-// components/ProductCardDetails/ProductCardDetailsLogic.ts
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { loadProducts } from "../../api/dataApi";
@@ -11,7 +10,6 @@ function ProductCardDetailsLogic() {
     const [product, setProduct] = useState<IProduct | null>(null);
     const [loading, setLoading] = useState(true);
 
-    // Zustand store
     const user = useAuthStore((state) => state.user);
     const usersData = useAuthStore((state) => state.usersData);
     const addToFavorites = useAuthStore((state) => state.addToFavorites);
