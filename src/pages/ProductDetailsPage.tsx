@@ -1,10 +1,9 @@
-import ProductCardDetails from "../components/ProductCardDetails/ProductCardDetailsUI";
-import type { ProductCardProps } from "../data/types";
+import ProductCardDetailsUI from "../components/ProductCardDetails/ProductCardDetailsUI";
 
-function ProductDetailsPage({ product }: ProductCardProps) {
+function ProductDetailsPage() {
     return (
-        <div style={{display: 'flex', justifyContent: 'center', width: '1400px'}}>
-            <ProductCardDetails key={product.id} product={product}/>
+        <div style={{ display: 'flex', justifyContent: 'center', width: '1400px' }}>
+            <ProductCardDetailsUI />
         </div>
     );
 }

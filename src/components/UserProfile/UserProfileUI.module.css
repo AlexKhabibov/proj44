@@ -10,8 +10,6 @@
     margin-bottom: 25px;
 }
 
-/* ---------- Информация о пользователе ---------- */
-
 .profile__info {
     display: flex;
     align-items: center;
@@ -32,8 +30,6 @@
     margin: 5px 0;
     font-size: 18px;
 }
-
-/* ---------- Секции профиля ---------- */
 
 .profile__sections {
     display: flex;

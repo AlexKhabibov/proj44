@@ -1,4 +1,3 @@
-/* Общий контейнер, центрируем контент */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -6,16 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Сетка товаров */
 .productsGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    /* центрируем карточки */
 }
 
-/* Стили для текста загрузки и ошибки */
 .loadingText {
     padding: 20px;
     text-align: center;
