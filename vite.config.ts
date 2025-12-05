@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'proj44onlineStoreTest',
+  base: 'proj44',
   plugins: [react()],
 })
